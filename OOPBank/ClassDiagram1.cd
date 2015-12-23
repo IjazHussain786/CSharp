@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="P2Bank.Accounts.Account" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAIAAAAAAAAAAAAgACAAIAAEAABABAAAAAEAAAAA=</HashCode>
+      <FileName>Accounts\Account.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="P2Bank.Accounts.DepositAccounts.DepositAccount" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAAAAAAEAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Accounts\DepositAccounts\DepositAccount.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="P2Bank.Accounts.DepositAccounts.SixMonthDeposit" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Accounts\DepositAccounts\SixMonthDeposit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.Accounts.LoanAccounts.LoanAccount" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAACAAAAAAAAAAgAAAEAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Accounts\LoanAccounts\LoanAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.Accounts.LoanAccounts.SixMonthLoan" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Accounts\LoanAccounts\SixMonthLoan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.Accounts.MortgageAccounts.MortgageAccount" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABBAAAAAAAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Accounts\MortgageAccounts\MortgageAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.Accounts.MortgageAccounts.ThirtyYearMortgage" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Accounts\MortgageAccounts\ThirtyYearMortgage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.BankMain" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>BankMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.Customer" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customers\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.Customers.CompanyCustomer" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customers\CompanyCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="P2Bank.Customers.IndividualCustomer" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customers\IndividualCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="P2Bank.Interfaces.ICalculateInterest" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICalculateInterest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="P2Bank.Interfaces.IDepositMoney" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDepositMoney.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="P2Bank.Interfaces.IWithdrawMoney" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IWithdrawMoney.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="P2Bank.Accounts.AccountType" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAA=</HashCode>
+      <FileName>Accounts\AccountType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="P2Bank.Accounts.DepositAccounts.DepositType" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAAA=</HashCode>
+      <FileName>Accounts\DepositAccounts\DepositType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="P2Bank.Accounts.LoanAccounts.LoanType" Collapsed="true">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAAA=</HashCode>
+      <FileName>Accounts\LoanAccounts\LoanType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="P2Bank.Accounts.MortgageAccounts.MortgageType" Collapsed="true">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Accounts\MortgageAccounts\MortgageType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
