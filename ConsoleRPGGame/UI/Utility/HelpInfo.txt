@@ -1,0 +1,36 @@
+﻿This is a simple 2D Role Playing Game. You have health and damage, and so do your enemies. 
+Your damage property can be boosted by certain weapons (dispersed on the 2D map). 
+If you find and equip yourself with armor you get a defensive bonus. 
+
+There are two types of potions on the map*
+-health potion (with different sizes and health bonus) - restores the player's decreased health;
+-health bonus potion - boosts the player's health property value permanently;
+*potions cannot be consumed during combat.
+
+The game objective is to kill all enemies on the map.
+
+Combat is automatic - when you reach an enemy, you fight until one of you is dead.
+
+Controls:
+F1     displays basic game info and commands
+←↑↓→   move player in the respective direction
+B      displays all items in your backpack
+R      Removes your last collected element from your backpack			
+M      displays the map
+H      heal yourself using a potion
+I      consume a health bonus potion to increase your health permanently, has a healing effect as well
+S      displays player status and enemies left
+C      clears the screen
+Esc    end the game
+
+Map legend:
+P - the player;
+T - troll, an enemy character - those are tough, avoid them at the beginning until you get stronger;
+O - orc, an enemy character - not as tough as trolls, but also a hard opponent to face;
+E - elf, an enemy character;
+M - human, an enemy character;
+G - goblin, an enemy character - those are easy to defeat, you should probably start with them;
+H - health restore potion;
+B - permanent health bonus potion;
+A - axe, gives a damage bonus, when equipped;
+S - sword, gives a damage bonus, when equipped.
