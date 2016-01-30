@@ -9,11 +9,11 @@ namespace Logger.Layouts
         public string Format(string msg, ReportLevel level, DateTime date)
         {
             var output = new StringBuilder();
-            output.AppendLine("<log>");
-            output.AppendLine("<date>" + date + "</date>");
-            output.AppendLine("<level>" + level + "</level>");
-            output.AppendLine("<message>" + msg + "</message>");
-            output.AppendLine("</log>");
+            output.AppendFormat("<log>" + Environment.NewLine);
+            output.AppendFormat("<date>" + date + "</date>" + Environment.NewLine);
+            output.AppendFormat("<level>" + level + "</level>" + Environment.NewLine);
+            output.AppendFormat("<message>" + msg + "</message>" + Environment.NewLine);
+            output.AppendFormat("</log>");
 
             return output.ToString();
         }

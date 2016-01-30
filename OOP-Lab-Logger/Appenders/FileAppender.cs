@@ -36,11 +36,13 @@ namespace Logger.Appenders
         public override void Append(string message, ReportLevel level, DateTime date)
         {
             string output = this.Layout.Format(message, level, date);
-            StreamWriter writer = new StreamWriter(this.FilePath);
-            using (writer)
-            {
-                writer.WriteLine(output);
-            }
+            File.AppendAllText(this.FilePath, output);
+
+            //StreamWriter writer = new StreamWriter(this.FilePath);
+            //using (writer)
+            //{
+            //    writer.WriteLine(output);
+            //}
         }
     }
 }
