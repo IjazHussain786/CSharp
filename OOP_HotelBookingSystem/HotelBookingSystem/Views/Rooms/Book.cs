@@ -16,7 +16,8 @@ namespace HotelBookingSystem.Views.Rooms
         protected override void BuildViewResult(StringBuilder viewResult)
         {
             var booking = this.Model as Booking;
-            viewResult.AppendFormat("Room booked from {0:dd.MM.yyyy} to {1:dd.MM.yyyy} for ${2:F2}.", booking.StartBookDate, booking.EndBookDate, booking.TotalPrice).AppendLine();
+            viewResult.AppendFormat("Room booked from {0:dd.MM.yyyy} to {1:dd.MM.yyyy} for ${2:F2}.{3}",
+                booking.StartBookDate, booking.EndBookDate, booking.TotalPrice, Environment.NewLine);
         }
     }
 }

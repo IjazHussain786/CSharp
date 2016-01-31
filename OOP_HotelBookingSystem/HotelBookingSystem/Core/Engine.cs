@@ -49,11 +49,11 @@ namespace HotelBookingSystem.Core
                     var errorView = new Error(ex.InnerException.Message);
                     viewResult = errorView.Display();
                 }
-                catch (InvalidOperationException ex)
-                {
-                    var errorView = new Error(ex.InnerException.Message);
-                    viewResult = errorView.Display();
-                }
+                //catch (InvalidOperationException ex)
+                //{
+                //    var errorView = new Error(ex.InnerException.Message);
+                //    viewResult = errorView.Display();
+                //}
 
                 Console.WriteLine(viewResult);
             }

@@ -2,12 +2,12 @@
 using System;
 using System.Threading;
 using System.Globalization;
+using System.Reflection;
 
 public class HotelBookingSystemMain
 {
     public static void Main()
     {
-        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
         Engine engine = new Engine();
         engine.StartOperation();
     }

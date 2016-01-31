@@ -15,7 +15,7 @@ namespace HotelBookingSystem.Infrastructure
     /// the the Model-View-Controller architecture.
     /// The controller contains a data layer, consisting of several repositories.
     /// The users actions are being processed through this class.
-    /// This is an abstract class, all specific controlles inherit from this class.
+    /// This is an abstract class, all specific controllers inherit from this class.
     /// </summary>
     public abstract class Controller
     {
@@ -58,7 +58,9 @@ namespace HotelBookingSystem.Infrastructure
             string fullNamespace = this.GetType().Namespace;
             int firstSeparatorIndex = fullNamespace.IndexOf(NamespaceSeparator);
             string baseNamespace = fullNamespace.Substring(0, firstSeparatorIndex);
+            
             string controllerName = this.GetType().Name.Replace(ControllerSuffix, string.Empty);
+            
             string actionName = new StackTrace().GetFrame(1).GetMethod().Name;
             string fullPath = string.Join(NamespaceSeparator,
                 new[] { baseNamespace, ViewsFolder, controllerName, actionName });
@@ -70,10 +72,10 @@ namespace HotelBookingSystem.Infrastructure
             return view;
         }
 
-        protected IView NotFound(string message)
-        {
-            return new Error(message);
-        }
+        //protected IView NotFound(string message)
+        //{
+        //    return new Error(message);
+        //}
 
         /// <summary>
         /// Checks whether the current system user is authorized to perform a certain action.
@@ -81,7 +83,7 @@ namespace HotelBookingSystem.Infrastructure
         /// <param name="roles">The role of the current system user in the system.</param>
         protected void Authorize(params Role[] roles)
         {
-            if (!HasCurrentUser)
+            if (!this.HasCurrentUser)
             {
                 throw new ArgumentException("There is no currently logged in user.");
             }

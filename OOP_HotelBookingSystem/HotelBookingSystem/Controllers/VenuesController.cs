@@ -21,7 +21,7 @@ namespace HotelBookingSystem.Controllers
             return view;
         }
 
-        public IView Details(int venueId)
+        public IView Details(int id)
         {
             if (this.HasCurrentUser == false)
             {
@@ -30,10 +30,10 @@ namespace HotelBookingSystem.Controllers
             
             this.Authorize(Role.User, Role.VenueAdmin);
             
-            var venue = this.Data.RepositoryWithVenues.Get(venueId);
+            var venue = this.Data.RepositoryWithVenues.Get(id);
             if (venue == null)
             {
-                return this.NotFound(string.Format("The venue with ID {0} does not exist.", venueId));
+                throw new ArgumentException(string.Format("The venue with ID {0} does not exist.", id));
             }
 
             var view = this.View(venue);
@@ -41,7 +41,7 @@ namespace HotelBookingSystem.Controllers
             return view;
         }
 
-        public IView Rooms(int venueId)
+        public IView Rooms(int id)
         {
             if (this.HasCurrentUser == false)
             {
@@ -50,10 +50,10 @@ namespace HotelBookingSystem.Controllers
 
             this.Authorize(Role.User, Role.VenueAdmin);
 
-            var venue = this.Data.RepositoryWithVenues.Get(venueId);
+            var venue = this.Data.RepositoryWithVenues.Get(id);
             if (venue == null)
             {
-                return this.NotFound(string.Format("The venue with ID {0} does not exist.", venueId));
+                throw new ArgumentException(string.Format("The venue with ID {0} does not exist.", id));
             }
 
             var view = this.View(venue);

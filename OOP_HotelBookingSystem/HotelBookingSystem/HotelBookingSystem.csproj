@@ -7,8 +7,8 @@
     <ProjectGuid>{45C30131-BED7-4495-86EF-09FF9C4E7193}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>booking</RootNamespace>
-    <AssemblyName>Чепеларе</AssemblyName>
+    <RootNamespace>HotelBookingSystem</RootNamespace>
+    <AssemblyName>HotelBookingSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -16,8 +16,7 @@ namespace HotelBookingSystem.Views.Users
         {
             var user = this.Model as IUser;
             viewResult
-                .AppendFormat("The user {0} has been registered and may login.", user.Username)
-                .AppendLine();
+                .AppendFormat("The user {0} has been registered and may login.{1}", user.Username, Environment.NewLine);
         }
     }
 }

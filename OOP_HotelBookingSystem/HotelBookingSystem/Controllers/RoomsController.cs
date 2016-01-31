@@ -23,11 +23,11 @@ namespace HotelBookingSystem.Controllers
         /// </returns>
         public IView Add(int venueId, int places, decimal pricePerDay)
         {
-            Authorize(Role.VenueAdmin);
+            this.Authorize(Role.VenueAdmin);
             var venue = Data.RepositoryWithVenues.Get(venueId);
-            if (venue != null)
+            if (venue == null)
             {
-                return NotFound(string.Format("The venue with ID {0} does not exist.", venueId));
+                throw new ArgumentException(string.Format("The venue with ID {0} does not exist.", venueId));
             }
 
             var newRoom = new Room(places, pricePerDay);
@@ -42,13 +42,14 @@ namespace HotelBookingSystem.Controllers
             var room = Data.RepositoryWithRooms.Get(roomId);
             if (room == null)
             {
-                return NotFound(string.Format("The room with ID {0} does not exist.", roomId));
+                throw new ArgumentException(string.Format("The room with ID {0} does not exist.", roomId));
             }
 
-            if (startDate < endDate)
+            if (endDate < startDate)
             {
                 throw new ArgumentException("The date range is invalid.");
             }
+
             room.AvailableDates.Add(new AvailableDate(startDate, endDate));
             return View(room);
         }
@@ -59,7 +60,7 @@ namespace HotelBookingSystem.Controllers
             var room = Data.RepositoryWithRooms.Get(id);
             if (room == null)
             {
-                return NotFound(string.Format("The room with ID {0} does not exist.", id));
+                throw new ArgumentException(string.Format("The room with ID {0} does not exist.", id));
             }
 
             return View(room.Bookings);
@@ -71,7 +72,7 @@ namespace HotelBookingSystem.Controllers
             var room = Data.RepositoryWithRooms.Get(roomId);
             if (room == null)
             {
-                return NotFound(string.Format("The room with ID {0} does not exist.", roomId));
+                throw new ArgumentException(string.Format("The room with ID {0} does not exist.", roomId));
             }
 
             if (endDate < startDate)

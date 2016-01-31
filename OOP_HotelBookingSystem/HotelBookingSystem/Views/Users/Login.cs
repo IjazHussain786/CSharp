@@ -15,7 +15,7 @@ namespace HotelBookingSystem.Views.Users
         protected override void BuildViewResult(StringBuilder viewResult)
         {
             var user = this.Model as IUser;
-            viewResult.AppendFormat("The user {0} has logged in.", user.Username).AppendLine();
+            viewResult.AppendFormat("The user {0} has logged in.{1}", user.Username, Environment.NewLine);
         }
     }
 }

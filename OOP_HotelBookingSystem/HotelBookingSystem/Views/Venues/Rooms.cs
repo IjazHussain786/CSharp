@@ -2,9 +2,10 @@
 using HotelBookingSystem.Models;
 using System.Text;
 using System.Linq;
+using System;
 
 
-namespace HotelBookingSystem.Views.Vеnues
+namespace HotelBookingSystem.Views.Venues
 {
     public class Rooms : View
     {
@@ -16,7 +17,7 @@ namespace HotelBookingSystem.Views.Vеnues
         protected override void BuildViewResult(StringBuilder viewResult)
         {
             var venue = this.Model as Venue;
-            viewResult.AppendFormat("Available rooms for venue {0}:", venue.Name).AppendLine();
+            viewResult.AppendFormat("Available rooms for venue {0}:{1}", venue.Name, Environment.NewLine);
             if (!venue.Rooms.Any())
             {
                 viewResult.AppendFormat("No rooms are currently available.");
@@ -25,8 +26,8 @@ namespace HotelBookingSystem.Views.Vеnues
             {
                 foreach (var room in venue.Rooms)
                 {
-                    viewResult.AppendFormat(" *[0] {1} places, ${2:F2} per day", 
-                        room.Id, room.PlacesCount, room.PricePerDay).AppendLine();
+                    viewResult.AppendFormat(" *[{0}] {1} places, ${2:F2} per day{3}",
+                        room.Id, room.PlacesCount, room.PricePerDay, Environment.NewLine);
                     if (!room.AvailableDates.Any())
                     {
                         viewResult.AppendLine("This room is not currently available.");
@@ -36,8 +37,8 @@ namespace HotelBookingSystem.Views.Vеnues
                         viewResult.AppendLine("Available dates:");
                         foreach (var datePair in room.AvailableDates.OrderBy(datePair => datePair.EndDate))
                         {
-                            viewResult.AppendFormat(" - {0:dd.MM.yyyy} - {1:dd.MM.yyyy}", 
-                                datePair.EndDate, datePair.StartDate).AppendLine();
+                            viewResult.AppendFormat(" - {0:dd.MM.yyyy} - {1:dd.MM.yyyy}{2}",
+                                datePair.StartDate, datePair.EndDate, Environment.NewLine);
                         }
                     }
                 }

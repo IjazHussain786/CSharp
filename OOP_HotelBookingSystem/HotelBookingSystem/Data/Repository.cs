@@ -30,9 +30,8 @@ namespace HotelBookingSystem.Data
             {
                 item = this.items[id];
             }
-            catch (KeyNotFoundException knfEx)
+            catch (KeyNotFoundException)
             {
-                throw new KeyNotFoundException(knfEx.Message);
             }
 
             return item;

@@ -27,8 +27,8 @@ namespace HotelBookingSystem.Views.Users
                 foreach (var booking in user.Bookings)
                 {
                     viewResult.AppendFormat
-                        ("* {0:dd.MM.yyyy} - {1:dd.MM.yyyy} (${2:F2})",
-                        booking.StartBookDate, booking.EndBookDate, booking.TotalPrice).AppendLine();
+                        ("* {0:dd.MM.yyyy} - {1:dd.MM.yyyy} (${2:F2}{3})",
+                        booking.StartBookDate, booking.EndBookDate, booking.TotalPrice, Environment.NewLine);
                 }
             }
         }

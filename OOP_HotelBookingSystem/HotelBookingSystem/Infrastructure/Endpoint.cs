@@ -31,11 +31,15 @@ namespace HotelBookingSystem.Infrastructure
 
             string partialControllerName = endpointParts[0];
             this.ControllerName = partialControllerName + ControllerSuffix;
+            
             this.ActionName = endpointParts[1];
+
             if (endpointParts.Length >= 3)
             {
                 this.Parameters = new Dictionary<string, string>();
+                
                 string[] parameterPairs = endpointParts[2].Split('&');
+                
                 foreach (var pair in parameterPairs)
                 {
                     string[] nameAndValue = pair.Split('=');

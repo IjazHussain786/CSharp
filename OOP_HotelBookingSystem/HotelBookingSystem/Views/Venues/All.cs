@@ -3,8 +3,9 @@ using HotelBookingSystem.Models;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
-namespace HotelBookingSystem.Views.Vеnues
+namespace HotelBookingSystem.Views.Venues
 {
     public class All : View
     {
@@ -24,8 +25,9 @@ namespace HotelBookingSystem.Views.Vеnues
             {
                 foreach (var venue in venues)
                 {
-                    viewResult.AppendFormat("*[{0}] {1}, located at {2}", venue.Id, venue.Name, venue.Address).AppendLine()
-                        .AppendFormat("Free rooms: {0}", venue.Rooms.Count).AppendLine();
+                    viewResult.AppendFormat("*[{0}] {1}, located at {2}{3}", venue.Id, venue.Name, venue.Address, 
+                        Environment.NewLine);
+                    viewResult.AppendFormat("Free rooms: {0}{1}", venue.Rooms.Count, Environment.NewLine);
                 }
             }
         }

@@ -16,7 +16,7 @@ namespace HotelBookingSystem.Views.Rooms
         protected override void BuildViewResult(StringBuilder viewResult)
         {
             var room = this.Model as Room;
-            viewResult.AppendFormat("The period has been added to room with ID {0}.", room.Id).AppendLine();
+            viewResult.AppendFormat("The period has been added to room with ID {0}.{1}", room.Id, Environment.NewLine);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace HotelBookingSystem.Infrastructure
         {
             var viewResult = new StringBuilder();
             this.BuildViewResult(viewResult);
+            
             return viewResult.ToString().Trim();
         }
 

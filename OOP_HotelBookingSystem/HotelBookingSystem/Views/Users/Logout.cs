@@ -15,7 +15,7 @@ namespace HotelBookingSystem.Views.Users
         protected override void BuildViewResult(StringBuilder viewResult)
         {
             var user = this.Model as IUser;
-            viewResult.AppendFormat("The user {0} has logged out.", user.Username).AppendLine();
+            viewResult.AppendFormat("The user {0} has logged out.{1}", user.Username, Environment.NewLine);
         }
     }
 }
