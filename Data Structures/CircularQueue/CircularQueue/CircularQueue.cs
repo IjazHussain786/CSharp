@@ -40,6 +40,7 @@ namespace Circular_Queue
             }
 
             T result = this.elements[this.startIndex];
+            this.elements[this.startIndex] = default(T);
             this.startIndex = (this.startIndex + 1) % this.elements.Length;
             this.Count--;
 
