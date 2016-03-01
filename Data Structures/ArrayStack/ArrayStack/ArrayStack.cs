@@ -9,23 +9,23 @@ namespace ArrayStack
         private const int InitialCapacity = 16;
 
         private T[] elements;
-        
-        public ArrayStack (int capacity = InitialCapacity)
-	    {
-            this.elements = new T[capacity];        
-	    } 
+
+        public ArrayStack(int capacity = InitialCapacity)
+        {
+            this.elements = new T[capacity];
+        }
 
         public int Count { get; private set; }
 
-        public int Capacity 
+        public int Capacity
         {
             get
             {
                 return this.elements.Length;
             }
         }
-        
-        public void Push(T element) 
+
+        public void Push(T element)
         {
             if (this.Count >= this.elements.Length)
             {
@@ -35,8 +35,8 @@ namespace ArrayStack
             this.elements[this.Count] = element;
             this.Count++;
         }
-        
-        public T Pop() 
+
+        public T Pop()
         {
             if (this.Count == 0)
             {
@@ -49,8 +49,8 @@ namespace ArrayStack
 
             return result;
         }
-        
-        public T Peek() 
+
+        public T Peek()
         {
             if (this.Count == 0)
             {
@@ -62,7 +62,7 @@ namespace ArrayStack
             return result;
         }
 
-        public T[] ToArray() 
+        public T[] ToArray()
         {
             T[] array = new T[this.Count];
             this.CopyAllElementsTo(array);
@@ -89,7 +89,7 @@ namespace ArrayStack
 
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = 0; i < this.Count; i++)
+            for (int i = this.Count - 1; i >= 0; i--)
             {
                 yield return this.elements[i];
             }

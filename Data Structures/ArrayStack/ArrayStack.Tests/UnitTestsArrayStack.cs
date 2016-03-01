@@ -172,7 +172,7 @@ namespace ArrayStack.Tests
 
             // Assert
             CollectionAssert.AreEqual(items,
-                new List<string>() { "Five", "Six", "Seven" });
+                new List<string>() { "Seven", "Six", "Five" });
         }
 
         [TestMethod]
@@ -193,7 +193,7 @@ namespace ArrayStack.Tests
             }
 
             // Assert
-            CollectionAssert.AreEqual(items, new List<object>() { "Five", 6, 7.77 });
+            CollectionAssert.AreEqual(items, new List<object>() { 7.77, 6, "Five" });
         }
 
         [TestMethod]
