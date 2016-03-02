@@ -10,7 +10,7 @@ namespace TreeDataStructure
     {
         private int nodesCount;
         
-        private readonly List<T> visitedNodes = new List<T>();
+        private List<T> visitedNodes = new List<T>();
         
         public AdjacencyListTree()
         {
@@ -29,6 +29,8 @@ namespace TreeDataStructure
             {
                 if (this.RootNode != null)
                 {
+                    this.nodesCount = 0;
+                    this.visitedNodes.Clear();
                     this.CalculateNodesCountDFS(this.RootNode);    
                 }
                 
@@ -47,6 +49,7 @@ namespace TreeDataStructure
                 {
                     CalculateNodesCountDFS(childNode);
                 }
+
                 this.nodesCount++;
             }
         }
