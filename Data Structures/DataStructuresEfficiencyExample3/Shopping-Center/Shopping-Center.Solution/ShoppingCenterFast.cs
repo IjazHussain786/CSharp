@@ -128,18 +128,18 @@ namespace ShoppingCenter
                 var productsToBeRemoved = this.productsByNameAndProducer[nameAndProducer];
                 int productsCount = productsToBeRemoved.Count;
                 this.productsByNameAndProducer.Remove(nameAndProducer);
-                
+
                 foreach (var product in productsToBeRemoved)
                 {
-                    this.productsByName.Remove(product.Name);
-                    this.productsByPrice.Remove(product.Price);
-                    this.productsByProducer.Remove(product.Producer);
+                    this.productsByName[product.Name].Remove(product);
+                    this.productsByPrice[product.Price].Remove(product);
+                    this.productsByProducer[product.Producer].Remove(product);
 
                     return productsCount + X_PRODUCTS_DELETED;
                 }
 
             }
-            
+
             return NO_PRODUCTS_FOUND;
         }
 
@@ -153,12 +153,12 @@ namespace ShoppingCenter
 
                 foreach (var product in productsToBeRemoved)
                 {
-                    this.productsByName.Remove(product.Name);
-                    
-                    this.productsByPrice.Remove(product.Price);
+                    this.productsByName[product.Name].Remove(product);
+
+                    this.productsByPrice[product.Price].Remove(product);
 
                     string nameAndProducer = this.CombineNameAndProducer(product.Name, product.Producer);
-                    this.productsByNameAndProducer.Remove(nameAndProducer);
+                    this.productsByNameAndProducer[nameAndProducer].Remove(product);
 
                     return productsCount + X_PRODUCTS_DELETED;
                 }
