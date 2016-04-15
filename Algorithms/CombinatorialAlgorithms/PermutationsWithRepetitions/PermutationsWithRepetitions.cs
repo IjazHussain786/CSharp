@@ -4,7 +4,7 @@ public class PermutationsWithRepetitions
 {
     public static void Main()
     {
-        var arr = new int[] { 3, 5, 1, 5, 5 };
+        var arr = new int[] { 3, 5, 1, 5, 5, 5, 5, 5, 5, 5, 5 };
         Array.Sort(arr);
         PermuteRep(arr, 0, arr.Length - 1);
     }
