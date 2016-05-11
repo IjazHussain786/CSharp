@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD202C8F-E779-4A10-AEC8-A3FC82644067}</ProjectGuid>
+    <ProjectGuid>{732EA948-B24B-4DF6-96A8-A07D796CB3B1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConnectingCables</RootNamespace>
-    <AssemblyName>ConnectingCables</AssemblyName>
+    <RootNamespace>Bridges</RootNamespace>
+    <AssemblyName>Bridges</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectingCables.cs" />
+    <Compile Include="Bridges.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
