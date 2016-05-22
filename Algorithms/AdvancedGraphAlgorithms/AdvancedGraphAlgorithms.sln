@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphCycles", "GraphCycles\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortestPathInMatrix", "ShortestPathInMatrix\ShortestPathInMatrix.csproj", "{E08982A5-AF48-414F-A8A4-0967354CE50C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadRenewal", "RoadRenewal\RoadRenewal.csproj", "{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +231,16 @@ Global
 		{E08982A5-AF48-414F-A8A4-0967354CE50C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E08982A5-AF48-414F-A8A4-0967354CE50C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E08982A5-AF48-414F-A8A4-0967354CE50C}.Release|x86.ActiveCfg = Release|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7112BD68-2827-45B8-AFB4-FC5ACD7E5DA9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
