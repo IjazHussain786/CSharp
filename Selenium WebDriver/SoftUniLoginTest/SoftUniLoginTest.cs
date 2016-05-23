@@ -14,6 +14,7 @@ namespace SoftUniLoginTest
         public void TestInitialize()
         {
             this.driver = new FirefoxDriver();
+            this.driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
         }
         
         [TestMethod]
