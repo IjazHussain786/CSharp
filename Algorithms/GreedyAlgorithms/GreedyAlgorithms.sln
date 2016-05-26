@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgyptianFractions", "Egypti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineInverter", "LineInverter\LineInverter.csproj", "{2B4F0221-062C-4703-ABC0-187A23D77B53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarsInTheCube", "StarsInTheCube\StarsInTheCube.csproj", "{4365EB7F-6406-48C4-A2CB-9648F5233683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossingFigures", "CrossingFigures\CrossingFigures.csproj", "{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{2B4F0221-062C-4703-ABC0-187A23D77B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4F0221-062C-4703-ABC0-187A23D77B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4F0221-062C-4703-ABC0-187A23D77B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4365EB7F-6406-48C4-A2CB-9648F5233683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4365EB7F-6406-48C4-A2CB-9648F5233683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4365EB7F-6406-48C4-A2CB-9648F5233683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4365EB7F-6406-48C4-A2CB-9648F5233683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
