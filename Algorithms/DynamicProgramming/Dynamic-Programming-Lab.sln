@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guitar", "Guitar\Guitar.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Towns", "Towns\Towns.csproj", "{EDD943CC-B6B9-4614-9186-DC2774B7F0E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeBrothers", "ThreeBrothers\ThreeBrothers.csproj", "{65E7E8CE-0FA9-40C8-9EBF-689E70ADBE0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{EDD943CC-B6B9-4614-9186-DC2774B7F0E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDD943CC-B6B9-4614-9186-DC2774B7F0E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDD943CC-B6B9-4614-9186-DC2774B7F0E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E7E8CE-0FA9-40C8-9EBF-689E70ADBE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E7E8CE-0FA9-40C8-9EBF-689E70ADBE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E7E8CE-0FA9-40C8-9EBF-689E70ADBE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E7E8CE-0FA9-40C8-9EBF-689E70ADBE0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
