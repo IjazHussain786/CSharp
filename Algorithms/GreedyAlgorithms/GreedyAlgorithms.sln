@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarsInTheCube", "StarsInTh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossingFigures", "CrossingFigures\CrossingFigures.csproj", "{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedFigures", "NestedRectangles\NestedFigures.csproj", "{CD2836AC-B174-45D1-9184-1AA08CCFA8E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1141EAB-18AC-4E5B-A3A0-1A4558AB888F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2836AC-B174-45D1-9184-1AA08CCFA8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2836AC-B174-45D1-9184-1AA08CCFA8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2836AC-B174-45D1-9184-1AA08CCFA8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2836AC-B174-45D1-9184-1AA08CCFA8E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
