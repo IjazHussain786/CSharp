@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastAndFurious", "FastAndFu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlossomAlgorithm", "BlossomAlgorithm\BlossomAlgorithm.csproj", "{FB6C20E4-A0EC-4754-8684-597F1635390A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robbery", "Robbery\Robbery.csproj", "{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -301,6 +303,16 @@ Global
 		{FB6C20E4-A0EC-4754-8684-597F1635390A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FB6C20E4-A0EC-4754-8684-597F1635390A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FB6C20E4-A0EC-4754-8684-597F1635390A}.Release|x86.ActiveCfg = Release|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2DAB074B-4E1D-47C6-9F58-D034B06CA31D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
