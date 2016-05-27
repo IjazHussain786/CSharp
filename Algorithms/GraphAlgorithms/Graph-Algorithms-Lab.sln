@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatPeshoTheSavior", "BatPeshoTheSavior\BatPeshoTheSavior.csproj", "{854AC710-72CC-4B7A-9F31-ABA054B16B51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sticks", "Sticks\Sticks.csproj", "{BD844D26-A45D-461C-B97B-E8568E719B47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{854AC710-72CC-4B7A-9F31-ABA054B16B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{854AC710-72CC-4B7A-9F31-ABA054B16B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{854AC710-72CC-4B7A-9F31-ABA054B16B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD844D26-A45D-461C-B97B-E8568E719B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD844D26-A45D-461C-B97B-E8568E719B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD844D26-A45D-461C-B97B-E8568E719B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD844D26-A45D-461C-B97B-E8568E719B47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
