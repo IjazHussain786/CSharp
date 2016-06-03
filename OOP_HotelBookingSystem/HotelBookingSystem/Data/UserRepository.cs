@@ -10,6 +10,7 @@ namespace HotelBookingSystem.Data
         private Dictionary<string, IUser> usersByUsername;
 
         public UserRepository()
+            : base()
         {
             this.usersByUsername = new Dictionary<string, IUser>();
         }

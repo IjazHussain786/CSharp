@@ -12,15 +12,12 @@ namespace HotelBookingSystem.Data
 
         public Repository()
         {
-            //this.items = new Dictionary<int, T>(new DbEqualityComparer());
             this.items = new Dictionary<int, T>();
         }
 
         public virtual IEnumerable<T> GetAll()
         {
-            return this.items
-                .OrderBy(item => item.Key)
-                .Select(item => item.Value);
+            return this.items.Values;
         }
 
         public virtual T Get(int id)
@@ -52,7 +49,8 @@ namespace HotelBookingSystem.Data
                 throw new ArgumentException(string.Format("No item with id {0} in database", id));
             }
 
-            item = newItem;
+            this.items[id] = newItem;
+
             return true;
         }
 

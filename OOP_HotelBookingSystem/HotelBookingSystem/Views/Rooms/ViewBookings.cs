@@ -30,9 +30,10 @@ namespace HotelBookingSystem.Views.Rooms
             {
                 viewResult.AppendFormat("* {0:dd.MM.yyyy} - {1:dd.MM.yyyy} (${2:F2}){3}", 
                     booking.StartBookDate, booking.EndBookDate, booking.TotalPrice, Environment.NewLine);
-                viewResult.AppendFormat("Total booking price: ${0:F2}{1}", bookings.Sum(b => b.TotalPrice), 
-                    Environment.NewLine);
             }
+
+            viewResult.AppendFormat("Total booking price: ${0:F2}{1}", bookings.Sum(b => b.TotalPrice),
+                    Environment.NewLine);
         }
     }
 }
