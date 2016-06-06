@@ -35,7 +35,7 @@ namespace PokerGame
 
         private void GetPlayersHands()
         {
-            for (int i = 0, j = 0, k = 1; i < NumberOfCardsPerHand; i++, j = j + 2, k = k + 2)
+            for (int i = 0, j = 0; i < NumberOfCardsPerHand; i++, j = j + 2)
             {
                 this.playerHand[i] = this.DeckOfCards.GetDeck[j];
                 this.computerHand[i] = this.DeckOfCards.GetDeck[i + 1];
