@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Label", "Label\01. Label.csproj", "{3A6B1549-C61E-4EA8-B9CD-BA85997E1FCF}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. ToolBar", "ToolBar\11. ToolBar.csproj", "{11A1896C-AA41-4E71-94E5-586AE9142786}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. CustomUserControlsDemo", "CustomUserControlsDemo\10. CustomUserControlsDemo.csproj", "{91CEB7C8-B28C-4A0A-97D5-7A1A33BAA3E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControlDemo", "CustomControlDemo\CustomControlDemo.csproj", "{FD8341BD-A081-4290-86F7-0923C49109D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,18 @@ Global
 		{91CEB7C8-B28C-4A0A-97D5-7A1A33BAA3E9}.Release|Mixed Platforms.Build.0 = Release|x86
 		{91CEB7C8-B28C-4A0A-97D5-7A1A33BAA3E9}.Release|x86.ActiveCfg = Release|x86
 		{91CEB7C8-B28C-4A0A-97D5-7A1A33BAA3E9}.Release|x86.Build.0 = Release|x86
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Debug|x86.Build.0 = Debug|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD8341BD-A081-4290-86F7-0923C49109D2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
