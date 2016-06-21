@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace DataContexts
+namespace DataTemplate
 {
-    class Person : INotifyPropertyChanged
+    public class Person : INotifyPropertyChanged
     {
         private int age;
 
@@ -31,7 +31,7 @@ namespace DataContexts
             this.Age = age;
         }
 
-        public Person() 
+        public Person()
             : this("", 0)
         {
         }

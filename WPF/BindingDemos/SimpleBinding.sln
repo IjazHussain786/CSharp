@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. DataContexts", "DataContexts\1. DataContexts.csproj", "{4E31035A-E4FF-4688-81AE-40E65C64B43C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. BindingToOtherControls", "BindingToOtherControls\2. BindingToOtherControls.csproj", "{5005D9A8-261E-4BFA-9A4F-86E7441EAD3C}"
@@ -8,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. ValueConversion", "ValueConversion\3. ValueConversion.csproj", "{C044549C-8D44-4A3D-A2FA-8C08DBB4437F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. BindingValidation", "BindingValidation\4. BindingValidation.csproj", "{E6E24B26-4921-48CB-967F-FC572622BA80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTemplate", "DataTemplate\DataTemplate.csproj", "{01B0853F-FB88-4180-83EA-31959958299C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,18 @@ Global
 		{E6E24B26-4921-48CB-967F-FC572622BA80}.Release|Mixed Platforms.Build.0 = Release|x86
 		{E6E24B26-4921-48CB-967F-FC572622BA80}.Release|x86.ActiveCfg = Release|x86
 		{E6E24B26-4921-48CB-967F-FC572622BA80}.Release|x86.Build.0 = Release|x86
+		{01B0853F-FB88-4180-83EA-31959958299C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Debug|x86.Build.0 = Debug|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Release|x86.ActiveCfg = Release|Any CPU
+		{01B0853F-FB88-4180-83EA-31959958299C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

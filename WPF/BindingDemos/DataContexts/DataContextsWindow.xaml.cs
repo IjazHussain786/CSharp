@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace DataContexts
 {
@@ -19,6 +20,8 @@ namespace DataContexts
             MessageBox.Show(string.Format(
                 "Happy Birthday, {0}, age {1}!",
                 person.Name, person.Age), "Birthday");
+
+            //this.birthdayButton.GetBindingExpression(TextBox.TextProperty).UpdateTarget();
         }
     }
 }

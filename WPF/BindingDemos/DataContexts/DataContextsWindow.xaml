@@ -16,7 +16,7 @@
         <TextBox Text="{Binding Path=Name}" HorizontalAlignment="Left"
             Width="80" Height="25" Grid.Row="0" Grid.Column="1" />
         <TextBlock Height="17" Grid.Row="1" Grid.Column="0" Width="38">Age:</TextBlock>
-        <TextBox Text="{Binding Path=Age}" HorizontalAlignment="Left" 
+        <TextBox Text="{Binding Path=Age, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" 
             Height="25" Width="80" Grid.Row="1" Grid.Column="1" Margin="0,2"
             Name="textBoxAge" />
         <Button Name="birthdayButton" Click="birthdayButton_Click"
