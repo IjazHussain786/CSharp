@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControlDemo", "Custom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeView", "TreeView\TreeView.csproj", "{B87AE64F-33BA-4D30-B5F9-E0AC5099FC54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationWindow", "NavigationWindow\NavigationWindow.csproj", "{0550513E-CFB4-46D2-A0BB-415A86C7D28C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -161,6 +163,18 @@ Global
 		{B87AE64F-33BA-4D30-B5F9-E0AC5099FC54}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B87AE64F-33BA-4D30-B5F9-E0AC5099FC54}.Release|x86.ActiveCfg = Release|Any CPU
 		{B87AE64F-33BA-4D30-B5F9-E0AC5099FC54}.Release|x86.Build.0 = Release|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Debug|x86.Build.0 = Debug|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Release|x86.ActiveCfg = Release|Any CPU
+		{0550513E-CFB4-46D2-A0BB-415A86C7D28C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
