@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. BindingValidation", "Bin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTemplate", "DataTemplate\DataTemplate.csproj", "{01B0853F-FB88-4180-83EA-31959958299C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTemplateTriggers", "DataTemplateTriggers\DataTemplateTriggers.csproj", "{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,18 @@ Global
 		{01B0853F-FB88-4180-83EA-31959958299C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{01B0853F-FB88-4180-83EA-31959958299C}.Release|x86.ActiveCfg = Release|Any CPU
 		{01B0853F-FB88-4180-83EA-31959958299C}.Release|x86.Build.0 = Release|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Debug|x86.Build.0 = Debug|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{0A0F4832-EBD8-4FB7-B3BC-D199FC0DA8DA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
