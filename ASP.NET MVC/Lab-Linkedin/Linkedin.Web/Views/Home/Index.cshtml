@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    @{
+        if (this.ViewBag.UserName != null)
+        {
+            <h1>Helo, @(this.ViewBag.UserName)!</h1>
+            <p class="lead">@(this.ViewBag.UserName)'s personal Linkedin account.</p>
+        }
+     }
+</div>

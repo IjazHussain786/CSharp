@@ -1,0 +1,21 @@
+﻿@model Linkedin.Web.ViewModels.UserViewModel
+
+<h1>@Html.DisplayFor(x => x.UserName)</h1>
+
+<img src="@Model.AvatarUrl" alt="@Model.UserName avatar" width="200">
+<br>
+@Html.DisplayNameFor(x => x.Email): @Html.DisplayFor(x => x.Email)
+<br>
+@Html.DisplayNameFor(x => x.FullName): @Html.DisplayFor(x => x.FullName)
+<br>
+@Html.DisplayNameFor(x => x.ContactInfo.Phone): @Html.DisplayFor(x => x.ContactInfo.Phone)
+<br>
+<h3>Certificates:</h3>
+@Html.DisplayFor(x => x.Certifications)
+<br>
+<h3>Skills:</h3>
+@Html.DisplayFor(x => x.Skills)
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
