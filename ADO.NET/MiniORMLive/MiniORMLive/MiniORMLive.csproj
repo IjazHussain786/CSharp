@@ -47,6 +47,7 @@
     <Compile Include="Attributes\EntityAttribute.cs" />
     <Compile Include="Attributes\IdAttribute.cs" />
     <Compile Include="ConnectionStringBuilder.cs" />
+    <Compile Include="Entities\Book.cs" />
     <Compile Include="EntityManager.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Entities\User.cs" />

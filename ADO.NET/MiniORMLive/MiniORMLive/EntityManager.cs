@@ -14,8 +14,8 @@
     class EntityManager : IDbContext
     {
         private SqlConnection connection;
-        private string connectionString;
-        private bool isCodeFirst;
+        private readonly string connectionString;
+        private readonly bool isCodeFirst;
 
         public EntityManager(string connectionString, bool isCodeFirst)
         {
@@ -30,13 +30,13 @@
                 throw new ArgumentNullException("Cannot persist null entity");
             }
 
-            if (isCodeFirst && !CheckIfTableExists(entity.GetType()))
+            if (this.isCodeFirst && !this.CheckIfTableExists(entity.GetType()))
             {
                 this.CreateTable(entity.GetType());
             }
 
             Type entityType = entity.GetType();
-            FieldInfo idInfo = GetId(entityType);
+            FieldInfo idInfo = this.GetId(entityType);
             int id = (int)idInfo.GetValue(entity);
 
             if (id <= 0)
@@ -65,7 +65,7 @@
         private string PrepareEntityUpdateString(object entity, FieldInfo idInfo)
         {
             StringBuilder updateString = new StringBuilder();
-            updateString.Append($"UPDATE {GetTableName(entity.GetType())} SET ");
+            updateString.Append($"UPDATE {this.GetTableName(entity.GetType())} SET ");
 
             StringBuilder settings = new StringBuilder();
 
@@ -89,14 +89,14 @@
         {
             int numberOfAffectedRows = 0;
 
-            string insertionString = PrepareEntityInsertionString(entityType);
-            using (connection = new SqlConnection(this.connectionString))
+            string insertionString = this.PrepareEntityInsertionString(entityType);
+            using (this.connection = new SqlConnection(this.connectionString))
             {
                 this.connection.Open();
                 SqlCommand insertionCommand = new SqlCommand(insertionString, this.connection);
                 numberOfAffectedRows = insertionCommand.ExecuteNonQuery();
 
-                string query = $"SELECT MAX(Id) FROM {GetTableName(entityType.GetType())}";
+                string query = $"SELECT MAX(Id) FROM {this.GetTableName(entityType.GetType())}";
                 SqlCommand getLastIdCommand = new SqlCommand(query, this.connection);
                 int id = (int)getLastIdCommand.ExecuteScalar();
                 idInfo.SetValue(entityType, id);
@@ -122,6 +122,7 @@
                 columnNamesString.Append($"{this.GetColumnName(columnField)}, ");
                 valueString.Append($"'{value}', ");
             }
+
             columnNamesString = columnNamesString.Remove(columnNamesString.Length - 2, 2);
             valueString = valueString.Remove(valueString.Length - 2, 2);
 
@@ -141,7 +142,7 @@
                 $"WHERE [Name] = '{this.GetTableName(type)}' AND [xtype] = 'U'";
 
             int numberOfTables = 0;
-            using (connection = new SqlConnection(this.connectionString))
+            using (this.connection = new SqlConnection(this.connectionString))
             {
                 this.connection.Open();
                 SqlCommand command = new SqlCommand(query, this.connection);
@@ -155,12 +156,21 @@
         {
             T wantedObject = default(T);
             string query = $"SELECT * FROM {this.GetTableName(typeof(T))} WHERE Id = {id}";
-            using (connection = new SqlConnection(this.connectionString))
+            using (this.connection = new SqlConnection(this.connectionString))
             {
                 this.connection.Open();
                 SqlCommand command = new SqlCommand(query, this.connection);
-                SqlDataReader reader = command.ExecuteReader();
-                wantedObject = CreateEntity<T>(reader);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (!reader.HasRows)
+                    {
+                        throw new InvalidOperationException("No entity was found with id " + id);
+                    }
+
+                    reader.Read();
+                    wantedObject = this.CreateEntity<T>(reader);
+                }
+
             }
 
             return wantedObject;
@@ -168,7 +178,6 @@
 
         private T CreateEntity<T>(SqlDataReader reader)
         {
-            reader.Read();
             object[] columns = new object[reader.FieldCount];
             reader.GetValues(columns);
 
@@ -186,7 +195,7 @@
             FieldInfo idInfo = createdObject.GetType()
                 .GetFields(BindingFlags.Instance | BindingFlags.NonPublic)
                 .FirstOrDefault(x => x.IsDefined(typeof(IdAttribute)));
-            
+
 
             idInfo.SetValue(createdObject, columns[0]);
 
@@ -195,38 +204,99 @@
 
         public IEnumerable<T> FindAll<T>()
         {
-            throw new System.NotImplementedException();
+            return this.FindAll<T>(null);
         }
 
-        public IEnumerable<T> FindAll<T>(string @where)
+        public IEnumerable<T> FindAll<T>(string where)
         {
-            throw new System.NotImplementedException();
+            List<T> entities = new List<T>();
+            string selectionString = $"SELECT * FROM {this.GetTableName(typeof(T))} WHERE 1=1 AND ";
+
+            if (where != null)
+            {
+                selectionString += where;
+            }
+
+            using (this.connection = new SqlConnection(this.connectionString))
+            {
+                this.connection.Open();
+
+                SqlCommand selectionCommand = new SqlCommand(selectionString, this.connection);
+                SqlDataReader reader = selectionCommand.ExecuteReader();
+                using (reader)
+                {
+                    while (reader.Read())
+                    {
+                        entities.Add(this.CreateEntity<T>(reader));
+                    }
+                }
+            }
+
+            return entities;
         }
 
         public T FindFirst<T>()
         {
-            throw new System.NotImplementedException();
+            return this.FindFirst<T>(null);
         }
 
-        public T FindFirst<T>(string @where)
+        public T FindFirst<T>(string where)
         {
-            throw new System.NotImplementedException();
+            T result = default(T);
+            string selectionString = $"SELECT TOP 1 * FROM {this.GetTableName(typeof(T))} WHERE 1=1 AND ";
+
+            if (where != null)
+            {
+                selectionString += where;
+            }
+
+            using (this.connection = new SqlConnection(this.connectionString))
+            {
+                this.connection.Open();
+                SqlCommand selectionCommand = new SqlCommand(selectionString, this.connection);
+                SqlDataReader reader = selectionCommand.ExecuteReader();
+                reader.Read();
+                result = this.CreateEntity<T>(reader);
+            }
+
+            return result;
         }
 
         public void Delete<T>(object entity)
         {
-            throw new System.NotImplementedException();
+            var firstOrDefault = entity.GetType()
+                .GetFields(BindingFlags.Instance | BindingFlags.NonPublic)
+                .FirstOrDefault(x => x.IsDefined(typeof(IdAttribute)));
+
+            if (firstOrDefault == null)
+            {
+                throw new NullReferenceException("The given entity has no field with attribute Id!");
+            }
+
+            this.DeleteById<T>((int)firstOrDefault.GetValue(entity));
         }
 
         public void DeleteById<T>(int id)
         {
-            throw new System.NotImplementedException();
+            string deletionString = $"DELETE FROM {this.GetTableName(typeof(T))} WHERE ID = @id";
+            using (this.connection = new SqlConnection(this.connectionString))
+            {
+                this.connection.Open();
+                SqlCommand command = new SqlCommand(deletionString, this.connection);
+                command.Parameters.AddWithValue("@id", id);
+                int numberofDeletedItems = command.ExecuteNonQuery();
+
+                if (numberofDeletedItems == 0)
+                {
+                    throw new ArgumentException($"Id {numberofDeletedItems} not found!");
+                }
+            }
         }
 
         private void CreateTable(Type entity)
         {
-            string creationString = PrepareTableCreationString(entity);
-            using (connection = new SqlConnection(this.connectionString))
+            string creationString = this.PrepareTableCreationString(entity);
+            using (this.connection = new SqlConnection(this.connectionString))
             {
                 this.connection.Open();
                 SqlCommand command = new SqlCommand(creationString, this.connection);
@@ -237,7 +307,7 @@
         private string PrepareTableCreationString(Type entity)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append($"CREATE TABLE {GetTableName(entity)} (");
+            builder.Append($"CREATE TABLE {this.GetTableName(entity)} (");
             builder.Append($"Id INT PRIMARY KEY IDENTITY(1,1), ");
 
             FieldInfo[] columnsInfos =
@@ -268,6 +338,10 @@
                     return "datetime";
                 case "Boolean":
                     return "bit";
+                case "Single":
+                case "Double":
+                case "Decimal":
+                    return "decimal(10, 4)";
                 default:
                     Console.WriteLine(field.FieldType.Name);
                     throw new ArgumentException("No such present type - try extending the framework!");

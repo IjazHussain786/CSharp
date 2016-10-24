@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniORMLive.Entities
 {
+    using System.Data;
     using MiniORMLive.Attributes;
 
     [Entity(TableName = "Users")]
@@ -25,25 +26,33 @@ namespace MiniORMLive.Entities
 
         [Column(ColumnName = "RegistrationDate")]
         private DateTime registrationDate;
-                                 
-        public User(string username, string password, int age, DateTime registrationDate)
+
+        [Column(ColumnName = "LastLoginTime")]
+        private DateTime lastLoginTime;
+
+        [Column(ColumnName = "IsActive")]
+        private bool isActive;
+
+        public User(string username, string password, int age, DateTime registrationDate, DateTime lastLoginTime, bool isActive)
         {
             this.Username = username;
             this.Password = password;
             this.Age = age;
             this.RegistrationDate = registrationDate;
+            this.LastLoginTime = lastLoginTime;
+            this.IsActive = isActive;
         }
 
         public string Username
         {
             get
             {
-                return username;
+                return this.username;
             }
 
             set
             {
-                username = value;
+                this.username = value;
             }
         }
 
@@ -51,12 +60,12 @@ namespace MiniORMLive.Entities
         {
             get
             {
-                return password;
+                return this.password;
             }
 
             set
             {
-                password = value;
+                this.password = value;
             }
         }
 
@@ -64,12 +73,12 @@ namespace MiniORMLive.Entities
         {
             get
             {
-                return age;
+                return this.age;
             }
 
             set
             {
-                age = value;
+                this.age = value;
             }
         }
 
@@ -77,12 +86,38 @@ namespace MiniORMLive.Entities
         {
             get
             {
-                return registrationDate;
+                return this.registrationDate;
             }
 
             set
             {
-                registrationDate = value;
+                this.registrationDate = value;
+            }
+        }
+
+        public DateTime LastLoginTime
+        {
+            get
+            {
+                return this.lastLoginTime;
+            }
+
+            set
+            {
+                this.lastLoginTime = value;
+            }
+        }
+
+        public bool IsActive
+        {
+            get
+            {
+                return this.isActive;
+            }
+
+            set
+            {
+                this.isActive = value;
             }
         }
     }
