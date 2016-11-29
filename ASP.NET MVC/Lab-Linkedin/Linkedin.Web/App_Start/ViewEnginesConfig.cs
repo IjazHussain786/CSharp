@@ -1,13 +1,13 @@
-﻿using System.Web.Mvc;
-
-namespace Linkedin.Web.App_Start
+﻿namespace LinkedIn.Web.App_Start
 {
+    using System.Web.Mvc;
+
     public static class ViewEnginesConfig
     {
         public static void RegisterViewEngines(ViewEngineCollection viewEngines)
         {
-            ViewEngines.Engines.Clear();
-            ViewEngines.Engines.Add(new RazorViewEngine());
+            viewEngines.Clear();
+            viewEngines.Add(new RazorViewEngine());
         }
     }
 }

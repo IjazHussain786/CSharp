@@ -1,13 +1,12 @@
-﻿
-
-using Linkedin.Data.Repositories;
-using Linkedin.Models;
-
-namespace Linkedin.Data
+﻿namespace LinkedIn.Data
 {
-    public interface ILinkedinData
+    using Models;
+    using Repositories;
+    using LinkedIn.Models;
+
+    public interface ILinkedInData
     {
-        IRepository<ApplicationUser> Users { get; }
+        IRepository<User> Users { get; }
 
         IRepository<Certification> Certifications { get; }
 
@@ -21,7 +20,7 @@ namespace Linkedin.Data
 
         IRepository<Skill> Skills { get; }
 
-        IRepository<Endorsement> Endorsements { get; }
+        IRepository<Endorcement> Endorcements { get; }
 
         IRepository<AdministrationLog> AdministrationLogs { get; }
 

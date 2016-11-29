@@ -1,6 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Web;
+using System.Web.Mvc;
 
-namespace Linkedin.Web.App_Start
+namespace LinkedIn.Web
 {
     public class FilterConfig
     {

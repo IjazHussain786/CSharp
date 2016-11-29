@@ -1,10 +1,10 @@
-﻿using System.Linq;
-
-namespace Linkedin.Data.Repositories
+﻿namespace LinkedIn.Data.Repositories
 {
+    using System.Linq;
+
     public interface IRepository<T>
     {
-        IQueryable<T> GetAll();
+        IQueryable<T> All();
 
         T Find(object id);
 

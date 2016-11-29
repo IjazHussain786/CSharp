@@ -1,41 +1,55 @@
-﻿using System;
-using System.Web.Mvc;
-using System.Web.Routing;
-using System.Linq;
-
-using Linkedin.Data;
-using Linkedin.Models;
-
-namespace Linkedin.Web.Controllers
+﻿namespace LinkedIn.Web.Controllers
 {
+    using System;
+    using System.Linq;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+    using Data;
+    using LinkedIn.Models;
+    using LinkedIn.Web.Infrastructure.ActionResults;
+
     public abstract class BaseController : Controller
     {
-        protected BaseController(ILinkedinData data)
+        private LinkedInData data;
+        private User userProfile;
+
+        protected BaseController(LinkedInData data)
         {
             this.Data = data;
         }
 
-        protected BaseController(ILinkedinData data, ApplicationUser userProfile)
-            : this(data)
+        protected BaseController(LinkedInData data, User userProfile)
+            :this(data)
         {
             this.UserProfile = userProfile;
         }
 
-        protected ILinkedinData Data { get; private set; }
+        protected LinkedInData Data { get; private set; }
 
-        protected ApplicationUser UserProfile { get; private set; }
+        protected User UserProfile { get; private set; }
 
-        protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, 
-            object state)
+        protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
         {
             if (requestContext.HttpContext.User.Identity.IsAuthenticated)
             {
-                string userName = requestContext.HttpContext.User.Identity.Name;
-                var user = this.Data.Users.GetAll().FirstOrDefault(x => x.UserName == userName);
+                var username = requestContext.HttpContext.User.Identity.Name;
+                var user = this.Data.Users.All().FirstOrDefault(x => x.UserName == username);
+               
                 this.UserProfile = user;
             }
 
             return base.BeginExecute(requestContext, callback, state);
         }
+
+        protected AutoMappedQueryViewResult<TSource, TResult> AutoMapperQueryView<TSource, TResult>(ViewResult view)
+        {
+            return new AutoMappedQueryViewResult<TSource, TResult>(view);
+        }
+
+        protected AutoMappedObjectViewResult<TSource, TResult> AutoMapperObjectView<TSource, TResult>(ViewResult view)
+            where TSource : class
+        {
+            return new AutoMappedObjectViewResult<TSource, TResult>(view);
+        } 
     }
 }

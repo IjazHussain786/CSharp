@@ -1,9 +1,8 @@
-
-using System.Data.Entity.Migrations;
-
-namespace Linkedin.Data.Migrations
+namespace LinkedIn.Data.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<LinkedinDbContext>
+    using System.Data.Entity.Migrations;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<LinkedInContext>
     {
         public Configuration()
         {
@@ -11,7 +10,7 @@ namespace Linkedin.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(LinkedinDbContext context)
+        protected override void Seed(LinkedInContext context)
         {
         }
     }

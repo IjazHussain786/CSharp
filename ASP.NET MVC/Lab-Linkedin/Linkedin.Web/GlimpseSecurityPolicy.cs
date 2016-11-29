@@ -4,7 +4,7 @@
 using Glimpse.AspNet.Extensions;
 using Glimpse.Core.Extensibility;
 
-namespace Linkedin.Web
+namespace VGGLinkedIn.Web
 {
     public class GlimpseSecurityPolicy:IRuntimePolicy
     {

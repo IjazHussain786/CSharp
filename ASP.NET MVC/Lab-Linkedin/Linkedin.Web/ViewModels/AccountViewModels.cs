@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Linkedin.Web.ViewModels
+namespace LinkedIn.Web.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -50,7 +50,7 @@ namespace Linkedin.Web.ViewModels
     {
         [Required]
         [Display(Name = "Username")]
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

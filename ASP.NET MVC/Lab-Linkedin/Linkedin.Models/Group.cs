@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Linkedin.Models
+﻿namespace LinkedIn.Data.Models
 {
-    public class Group
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using LinkedIn.Models;
+
+    public class Group : IEntity
     {
+        private ICollection<User> members;
+        private ICollection<Discussion> discussions;
+
         public Group()
         {
-            this.Members = new HashSet<ApplicationUser>();
-            this.Discussions = new HashSet<Discussion>();
+            this.members = new HashSet<User>();
+            this.discussions = new HashSet<Discussion>();
         }
 
         public int Id { get; set; }
@@ -22,10 +24,20 @@ namespace Linkedin.Models
 
         public string OwnerId { get; set; }
 
-        public virtual ApplicationUser Owner { get; set; }
+        public virtual User Owner { get; set; }
 
-        public virtual ICollection<ApplicationUser> Members { get; set; }
+        public string Website { get; set; }
 
-        public virtual ICollection<Discussion> Discussions { get; set; }
+        public virtual ICollection<User> Members
+        {
+            get { return this.members; }
+            set { this.members = value; }
+        }
+
+        public virtual ICollection<Discussion> Discussions
+        {
+            get { return this.discussions; }
+            set { this.discussions = value; }
+        }
     }
 }

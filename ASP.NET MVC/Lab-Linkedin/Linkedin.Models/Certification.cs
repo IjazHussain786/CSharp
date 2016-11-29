@@ -1,12 +1,12 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace Linkedin.Models
+﻿namespace LinkedIn.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     public class Certification
     {
         [Key]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -15,13 +15,13 @@ namespace Linkedin.Models
 
         public string Url { get; set; }
 
-        public DateTime DateTaken { get; set; }
+        public DateTime TakenDate { get; set; }
 
         public DateTime ExpirationDate { get; set; }
 
         [Required]
         public string UserId { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public User User { get; set; }
     }
 }

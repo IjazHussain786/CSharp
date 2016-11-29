@@ -1,79 +1,97 @@
-﻿using System.Web.Mvc;
-using System.Linq;
-using System.Data.Entity;
-
-using Linkedin.Data;
-using Linkedin.Web.ViewModels;
-using Linkedin.Models;
-
-namespace Linkedin.Web.Controllers
+﻿namespace LinkedIn.Web.Controllers
 {
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Web.Mvc;
+
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
+
+    using Data;
+    using Data.Models;
+
+    using LinkedIn.Models;
+
+    using ViewModels;
+
     [Authorize]
     public class UsersController : BaseController
     {
-        public UsersController(ILinkedinData data)
-            : base(data)
+        public UsersController(LinkedInData data) : base(data)
         {
         }
 
         public ActionResult Index(string username)
         {
-            //var user = this.Data.Users.GetAll().
-            //    FirstOrDefault(x => x.UserName == username);
-
-            var user = this.Data.Users.GetAll().
-                Include(x => x.Certifications).
-                Include(x => x.UserSkills).
-                Include("UserSkills.Skill").
-                Include("UserSkills.Skill.User").
-                Where(x => x.UserName == username).
-                Select(UserViewModel.GetUserViewModel).
-                FirstOrDefault();
-
+            var user = this.Data.Users
+                .All()
+                .Include(x => x.ContactInfo.Twitter)
+                .Include(x => x.Certifications)
+                .Include(x => x.Skills)
+                .Include("Skills.Skill")
+                .Include("Skills.Skill.User")
+                .Where(x => x.UserName == username)
+                .Project()
+                .To<UserViewModel>()
+                .FirstOrDefault();
+            
             if (user == null)
             {
                 return this.HttpNotFound("User does not exist!");
             }
 
-            //var userViewModel = UserViewModel.FromModel(user);
-
-            //var userViewModel = new UserViewModel()
-            //{
-            //    UserName = user.UserName,
-            //    Email = user.Email,
-            //    FullName = user.FullName,
-            //    AvatarUrl = user.AvatarUrl,
-            //    Summary = user.Summary,
-            //    ContactInfo = user.ContactInfo
-            //};
-
             return this.View(user);
+        }
+
+        public ActionResult Test()
+        {
+
+            var users = this.Data.Users
+                .All()
+                .Project()
+                .To<UserViewModel>()
+                .ToList();
+            
+            var viewModel = Mapper.Map<UserViewModel>(this.UserProfile);
+
+            return null;
+        }
+
+        public ActionResult TestMany()
+        {
+            Mapper.CreateMap<User, UserViewModel>();
+
+            var users = this.Data.Users
+                .All()
+                .Project()
+                .To<UserViewModel>()
+                .ToList();
+
+            return null;
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EndorseUserForSkill(int userSkillId)
+        public ActionResult EndorseUserForSkill(int id)
         {
-            bool hasExistingEndorsement = this.Data.Endorsements.GetAll().
-                Any(x => x.UserId == this.UserProfile.Id && x.UserSkillId == userSkillId);
-            if (!hasExistingEndorsement)
+            var userSkillEndorcement = this.Data.Endorcements.All().Where(x => x.UserSkillId == id);
+
+            var hasExistingEndorcement = userSkillEndorcement.Any(x => x.UserId == this.UserProfile.Id);
+            if (!hasExistingEndorcement)
             {
-                var endorsement = new Endorsement()
+                this.Data.Endorcements.Add(new Endorcement
                 {
                     UserId = this.UserProfile.Id,
-                    UserSkillId = userSkillId
-                };
+                    UserSkillId = id
+                });
 
-                this.Data.Endorsements.Add(endorsement);
                 this.Data.SaveChanges();
             }
 
-            var endorsements = this.Data.Endorsements.GetAll().
-                Where(x => x.UserSkillId == userSkillId);
-            int endorsementCount = endorsements.Count();
-            var endorsers = endorsements.Select(x => x.User.UserName).ToList();
+            var endorcementsCount = userSkillEndorcement.Count();
+            var endorcers = userSkillEndorcement.Select(x => x.User.UserName).ToList();
 
-            return this.Content(string.Format("{0} ({1})", endorsementCount, string.Join(", ", endorsers)));
+            return this.Content(string.Format("{0} ({1})", endorcementsCount, string.Join(",", endorcers)));
         }
     }
 }

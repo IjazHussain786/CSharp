@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Linkedin.Models
+﻿namespace LinkedIn.Data.Models
 {
+    using System.ComponentModel.DataAnnotations.Schema;
+
     [ComplexType]
     public class ContactInfo
     {

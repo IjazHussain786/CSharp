@@ -1,13 +1,17 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web;
 
-using Linkedin.Web.App_Start;
-
-namespace Linkedin.Web
+namespace LinkedIn.Web
 {
-    public class MvcApplication : HttpApplication
+    using System.Collections.Generic;
+    using System.Reflection;
+
+    using App_Start;
+    using LinkedIn.Common.Mappings;
+    using LinkedIn.Web.ModelBinders;
+
+    public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
@@ -17,6 +21,11 @@ namespace Linkedin.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ViewEnginesConfig.RegisterViewEngines(ViewEngines.Engines);
+
+            var autoMapper = new AutoMapperConfig(new[] {Assembly.GetExecutingAssembly()});
+            autoMapper.Execute();
+
+            ModelBinderProviders.BinderProviders.Add(new EntityModelBinderProvider());
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Linkedin.Models
+﻿namespace LinkedIn.Data.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Discussion
     {
         public int Id { get; set; }

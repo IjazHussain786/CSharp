@@ -3,92 +3,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Linkedin.Data.Repositories;
-using Linkedin.Models;
 
-namespace Linkedin.Data
+namespace LinkedIn.Data
 {
-    public class LinkedinData : ILinkedinData
+    using Models;
+    using Repositories;
+    using LinkedIn.Models;
+
+    public class LinkedInData : ILinkedInData
     {
-        private ILinkedInDbContext context;
+        private LinkedInContext context;
         private IDictionary<Type, object> repositories;
 
-        public LinkedinData(ILinkedInDbContext context)
+        public LinkedInData(LinkedInContext context)
         {
             this.context = context;
             this.repositories = new Dictionary<Type, object>();
         }
 
-        public IRepository<AdministrationLog> AdministrationLogs
+        public IRepository<User> Users
         {
-            get
-            {
-                return this.GetRepositpry<AdministrationLog>();
-            }
+            get { return this.GetRepository<User>(); }
         }
 
         public IRepository<Certification> Certifications
         {
-            get
-            {
-                return this.GetRepositpry<Certification>();
-            }
+            get { return this.GetRepository<Certification>(); }
         }
 
         public IRepository<Discussion> Discussions
         {
-            get
-            {
-                return this.GetRepositpry<Discussion>();
-            }
-        }
-
-        public IRepository<Endorsement> Endorsements
-        {
-            get
-            {
-                return this.GetRepositpry<Endorsement>();
-            }
+            get { return this.GetRepository<Discussion>(); }
         }
 
         public IRepository<Experience> Experiences
         {
-            get
-            {
-                return this.GetRepositpry<Experience>();
-            }
+            get { return this.GetRepository<Experience>(); }
         }
 
         public IRepository<Group> Groups
         {
-            get
-            {
-                return this.GetRepositpry<Group>();
-            }
+            get { return this.GetRepository<Group>(); }
         }
 
         public IRepository<Project> Projects
         {
-            get
-            {
-                return this.GetRepositpry<Project>();
-            }
+            get { return this.GetRepository<Project>(); }
         }
 
         public IRepository<Skill> Skills
         {
-            get
-            {
-                return this.GetRepositpry<Skill>();
-            }
+            get { return this.GetRepository<Skill>(); }
         }
 
-        public IRepository<ApplicationUser> Users
+        public IRepository<Endorcement> Endorcements
         {
-            get
-            {
-                return this.GetRepositpry<ApplicationUser>();
-            }
+            get { return this.GetRepository<Endorcement>(); }
+        }
+
+        public IRepository<AdministrationLog> AdministrationLogs
+        {
+            get { return this.GetRepository<AdministrationLog>(); }
         }
 
         public int SaveChanges()
@@ -96,12 +71,17 @@ namespace Linkedin.Data
             return this.context.SaveChanges();
         }
 
-        private IRepository<T> GetRepositpry<T>() where T : class
+        private IRepository<T> GetRepository<T>() where T : class
         {
             var type = typeof(T);
             if (!this.repositories.ContainsKey(type))
             {
                 var typeOfRepository = typeof(GenericRepository<T>);
+                //                if (type.IsAssignableFrom(typeof(Game)))
+                //                {
+                //                    typeOfRepository = typeof(GamesRepository);
+                //                }
+
                 var repository = Activator.CreateInstance(typeOfRepository, this.context);
                 this.repositories.Add(type, repository);
             }

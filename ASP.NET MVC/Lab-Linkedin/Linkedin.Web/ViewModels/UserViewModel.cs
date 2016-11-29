@@ -1,66 +1,34 @@
-﻿using System.Collections.Generic;
-using System.Linq.Expressions;
-using System;
-using System.Linq;
-
-using Linkedin.Models;
-
-
-namespace Linkedin.Web.ViewModels
+﻿namespace LinkedIn.Web.ViewModels
 {
-    public class UserViewModel
-    {
-        public static Expression<Func<ApplicationUser, UserViewModel>> GetUserViewModel
-        {
-            get
-            {
-                return x => new UserViewModel
-                {
-                    Id = x.Id,
-                    UserName = x.UserName,
-                    Email = x.Email,
-                    FullName = x.FullName,
-                    AvatarUrl = x.AvatarUrl,
-                    Summary = x.Summary,
-                    ContactInfo = x.ContactInfo,
-                    Certifications = x.Certifications.AsQueryable().
-                        Select(CertificationViewModel.GetCertificationViewModel),
-                    Skills = x.UserSkills.AsQueryable().Select(SkillViewModel.GetSkillViewModel)
-                };
-            }
-        }
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq.Expressions;
+    using Data.Models;
+    using LinkedIn.Models;
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using Common.Mappings;
 
+    public class UserViewModel : IMapFrom<User>
+    {
         public string Id { get; set; }
 
         public string UserName { get; set; }
 
+        public string Email { get; set; }
+
+        [Display(Name = "Име")]
         public string FullName { get; set; }
 
         public string AvatarUrl { get; set; }
 
         public string Summary { get; set; }
 
-        public string Email { get; set; }
-
         public ContactInfo ContactInfo { get; set; }
 
         public IEnumerable<CertificationViewModel> Certifications { get; set; }
 
         public IEnumerable<SkillViewModel> Skills { get; set; }
-
-        //public static object FromModel(ApplicationUser user)
-        //{
-        //    var userViewModel = new UserViewModel()
-        //    {
-        //        UserName = user.UserName,
-        //        Email = user.Email,
-        //        FullName = user.FullName,
-        //        AvatarUrl = user.AvatarUrl,
-        //        Summary = user.Summary,
-        //        ContactInfo = user.ContactInfo
-        //    };
-
-        //    return userViewModel;
-        //}
     }
 }

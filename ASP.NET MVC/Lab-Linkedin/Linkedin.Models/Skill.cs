@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace Linkedin.Models
+﻿namespace LinkedIn.Data.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Skill
     {
+        private ICollection<UserSkill> users;
+
         public Skill()
         {
-            this.Skills = new HashSet<Skill>();
+            this.users = new HashSet<UserSkill>();
         }
 
         public int Id { get; set; }
@@ -15,6 +17,10 @@ namespace Linkedin.Models
         [Required]
         public string Name { get; set; }
 
-        public virtual ICollection<Skill> Skills { get; set; }
+        public virtual ICollection<UserSkill> UserSkills
+        {
+            get { return this.users; }
+            set { this.users = value; }
+        }
     }
 }

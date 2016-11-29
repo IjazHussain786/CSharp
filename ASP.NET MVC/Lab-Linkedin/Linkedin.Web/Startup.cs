@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Linkedin.Web.Startup))]
-namespace Linkedin.Web
+[assembly: OwinStartupAttribute(typeof(LinkedIn.Web.Startup))]
+namespace LinkedIn.Web
 {
     public partial class Startup
     {

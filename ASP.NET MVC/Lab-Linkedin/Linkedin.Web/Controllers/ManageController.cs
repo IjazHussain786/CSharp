@@ -1,15 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using LinkedIn.Web.Models;
 
-using Linkedin.Web.ViewModels;
-using Linkedin.Web.App_Start;
-
-namespace Linkedin.Web.Controllers
+namespace LinkedIn.Web.Controllers
 {
     [Authorize]
     public class ManageController : Controller
@@ -196,9 +195,7 @@ namespace Linkedin.Web.Controllers
         }
 
         //
-        // POST: /Manage/RemovePhoneNumber
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        // GET: /Manage/RemovePhoneNumber
         public async Task<ActionResult> RemovePhoneNumber()
         {
             var result = await UserManager.SetPhoneNumberAsync(User.Identity.GetUserId(), null);

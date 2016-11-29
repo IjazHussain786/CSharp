@@ -1,8 +1,7 @@
-﻿using System.Data.Entity;
-using System.Linq;
-
-namespace Linkedin.Data.Repositories
+﻿namespace LinkedIn.Data.Repositories
 {
+    using System.Data.Entity;
+
     public class GenericRepository<T> : IRepository<T> where T : class
     {
         private DbContext context;
@@ -12,32 +11,17 @@ namespace Linkedin.Data.Repositories
         {
             this.context = context;
             this.set = context.Set<T>();
+
         }
 
         public IDbSet<T> Set
         {
-            get
-            {
-                return this.set;
-            }
+            get { return this.set; }
         }
 
-        public void Add(T entity)
+        public System.Linq.IQueryable<T> All()
         {
-            this.ChangeSate(entity, EntityState.Added);
-        }
-
-        public T Delete(object id)
-        {
-            var entity = this.Find(id);
-            this.Delete(entity);
-
-            return entity;
-        }
-
-        public void Delete(T entity)
-        {
-            this.ChangeSate(entity, EntityState.Deleted);
+            return this.set;
         }
 
         public T Find(object id)
@@ -45,17 +29,29 @@ namespace Linkedin.Data.Repositories
             return this.set.Find(id);
         }
 
-        public IQueryable<T> GetAll()
+        public void Add(T entity)
         {
-            return this.set;
+            this.ChangeState(entity, EntityState.Added);
         }
 
         public void Update(T entity)
         {
-            this.ChangeSate(entity, EntityState.Modified);
+            this.ChangeState(entity, EntityState.Modified);
         }
 
-        private void ChangeSate(T entity, EntityState state)
+        public void Delete(T entity)
+        {
+            this.ChangeState(entity, EntityState.Deleted);
+        }
+
+        public T Delete(object id)
+        {
+            var entity = this.Find(id);
+            this.Delete(entity);
+            return entity;
+        }
+
+        private void ChangeState(T entity, EntityState state)
         {
             var entry = this.context.Entry(entity);
             if (entry.State == EntityState.Detached)

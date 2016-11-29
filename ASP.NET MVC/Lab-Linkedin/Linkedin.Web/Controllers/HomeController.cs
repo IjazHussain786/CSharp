@@ -1,30 +1,31 @@
-﻿using System.Web.Mvc;
-
-using Linkedin.Data;
-
-namespace Linkedin.Web.Controllers
+﻿namespace LinkedIn.Web.Controllers
 {
+    using System.Linq;
+    using AutoMapper;
+    using System.Web.Mvc;
+    using AutoMapper.QueryableExtensions;
+    using Data;
+    using ViewModels;
+
     public class HomeController : BaseController
     {
-        public HomeController(ILinkedinData data)
+        public HomeController(LinkedInData data)
             : base(data)
         {
         }
 
         public ActionResult Index()
         {
-            if (this.UserProfile != null)
-            {
-                this.ViewBag.UserName = this.UserProfile.UserName;
-            }
+            var certificates = this.UserProfile.Certifications
+                .AsQueryable()
+                .Project()
+                .To<CertificationViewModel>();
 
-            return this.View();
+            return this.View(certificates);
         }
 
         public ActionResult About()
         {
-            this.ViewBag.Message = "Your application description page.";
-
             return this.View();
         }
 

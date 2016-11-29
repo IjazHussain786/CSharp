@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Linkedin.Models
+﻿namespace LinkedIn.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class AdministrationLog
     {
         [Key]
@@ -10,7 +10,7 @@ namespace Linkedin.Models
         [Required]
         public string UserId { get; set; }
 
-        public virtual ApplicationUser User { get; set; }
+        public virtual User User { get; set; }
 
         public string IpAddress { get; set; }
 

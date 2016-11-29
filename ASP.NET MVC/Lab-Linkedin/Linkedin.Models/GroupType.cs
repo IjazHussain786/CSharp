@@ -1,9 +1,8 @@
-﻿
-namespace Linkedin.Models
+﻿namespace LinkedIn.Data.Models
 {
     public enum GroupType
     {
-        Proffesional,
+        Professional,
         Networking,
         NonProfit,
         Conference,
